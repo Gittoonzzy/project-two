@@ -1,0 +1,213 @@
+html {
+	scroll-behavior: smooth;
+  }
+	
+	
+	.masterDiv1 img {
+		height: 8rem;
+	}
+	
+	.masterDiv1 h1 {
+		padding-top:2rem;
+		font-size:2.5vw;
+		font-weight:1000;
+	}
+	
+	.masterDiv1 i {
+		font-size:3rem;
+		padding-top:1rem;
+	}
+	
+.navbar ul li a {
+	color:white;
+	
+}
+
+.navbar ul li a:hover {
+	background-color: white;;
+	color:black;
+	
+}
+
+.carousel {
+	padding-top: 2rem;
+	
+}
+
+.divHome {
+	padding-top: 2rem;
+}
+
+.nav-tabs li a{
+		color:black;
+	}
+	
+	.navbar-toggler{
+		color:white;
+	}
+	
+	.divQuick{
+		padding-top: 1.5rem;
+	}
+	
+	.divMotto {
+		padding-top: 1.5rem;	
+		}
+		
+		#pMobile {
+			display:none;
+		}
+		
+		.divAboutImg {
+			padding-top: 1.5rem;
+		}
+		
+		.divAboutText {
+			padding-top: 1.5rem;
+		}
+		
+		.divCurriculam {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+
+		.divForms ul li a {
+			color:red;
+			
+		}
+
+	
+
+		.tab-content p a,
+		.tab-content p
+		 {
+			color:red;
+			font-size:2rem;
+			font-style:italic;
+		}
+
+		.divQuick p a {
+			color:red;
+			font-style:italic;
+			font-weight:900;
+		}
+
+		.divFooter p a {
+			color:white !important;
+		}
+
+		.dropdown:hover>.dropdown-menu {
+			display: block;
+		   }
+
+		   #divLogin  a {
+			color:white;
+		}
+
+
+
+.modal { 
+   background-color: black !important; 
+}
+
+.mySlides {
+	display:none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  padding:5px;
+  top:40%;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 30px;
+}
+
+.prev {
+	left:30px;
+}
+
+#gallery {
+	height:400px;
+}
+
+#gallery img {
+	border-radius: 0;
+	object-fit:contain;
+}
+
+.divGallery img {
+	height:100%;
+	width:100%;
+	border-radius: 25%;
+
+}
+
+
+.divGallery {
+	text-align: center;
+}
+
+.acaciaButton {
+	background-color:black;
+	color:white;
+}
+
+
+	@media only screen and (max-width: 1023px) {
+		.divMotto {
+			display:none;
+		}
+	}
+	
+	@media only screen and (max-width: 767px) {
+		#divLogin {
+			display:none;
+		}
+		
+		#divLanguage {
+			text-align:center;
+		}
+	
+		#divCallus {
+			display:none;
+		}
+		
+		#divSchool {
+			display:none;
+		}
+		
+		#divMasterImage{
+			text-align:center;
+		}
+		
+	.navbar button {
+		margin:auto;
+	}
+	.navbar ul li a {
+	text-align:center;
+	
+}
+
+.formContact button {
+			position:relative;
+			left:40%;
+		}
+
+		.divContact {
+			padding-top:1.5rem;
+		}
+
+	}
