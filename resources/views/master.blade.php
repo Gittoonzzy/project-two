@@ -1,164 +1,122 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title', 'Acacia Home')</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
-content="Acacia secondary school website" />
-<meta name="keywords"
-content="Acacia, Secondary School, Mlandizi" />
-<meta http-equiv="author"
-content="Katunzi Bernard" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" />
-    
-    
-    
-	@yield('head')
-  </head>
-  <body> 
-   <div class="container-fluid">
- <div class ="row bg-dark text-white text-md-center">
- <div class="col-md-4" id="divLogin"><a href="{{ URL::to('home') }}">Login</a></div>
- <div class="col-md-4"></div>
-  <div class="col-md-4" ></div>
- </div>
- </div>
- 
- <div class="container-fluid">
- <div class ="row text-md-center masterDiv1">
- <div class="col-md-4" id="divMasterImage"><a href="{{ URL::to('home') }}"><img src="images/logo.jpeg"></a></div>
- <div class="col-md-4" id="divSchool"><h1>Acacia Secondary School</h1></div>
-  <div class="col-md-4" id="divCallus">
-  <i class='fas fa-phone-alt'></i>
-  <p ><b>Call Us:+255 747725725</b></p>
-  
+  <meta name="description" content="Acacia Secondary School, a boarding school in Mlandizi, Kibaha.">
+  <meta name="keywords" content="Acacia, Secondary School, Mlandizi">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <div class="utility">
+    <div class="wrap utility-row">
+      <span>Reg. No. S. 3588 · Mlandizi, Kibaha</span>
+      <span>
+        <a href="{{ url('home') }}">Login</a>
+        <a href="tel:+255747725725">+255 747 725 725</a>
+      </span>
+    </div>
   </div>
- </div>
- </div>
- 
-<nav class="navbar navbar-expand-md bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <i class='fas fa-list-alt' style='font-size:36px'></i>
-  </button>
-  <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="{{ URL::to('home') }}">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{ URL::to('about') }}">About Us</a>
-    </li>
-      <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Academics
+
+  <header class="mast">
+    <div class="wrap mast-row">
+      <a class="crest" href="{{ url('home') }}">
+        <img src="{{ asset('images/acacia_logo.jpeg') }}" alt="Acacia Secondary School">
+        <span>
+          <strong>Acacia Secondary School</strong>
+          <small>Education Centre · Mlandizi</small>
+        </span>
       </a>
-      <div class="dropdown-menu bg-dark text-white">
-        <a class="dropdown-item" href="{{ URL::to('curriculam') }}">Curriculam</a>
-        
+      <p class="mast-call">
+        <span>Call us</span>
+        <a href="tel:+255747725725">+255 747 725 725</a>
+      </p>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="school-nav">Menu</button>
+    </div>
+    <nav id="school-nav" class="school-nav">
+      <div class="wrap nav-row">
+        <a class="{{ request()->is('/') || request()->is('home') ? 'is-active' : '' }}" href="{{ url('home') }}">Home</a>
+        <a class="{{ request()->is('about') ? 'is-active' : '' }}" href="{{ url('about') }}">About us</a>
+        <div class="menu-item">
+          <a class="{{ request()->is('curriculam') ? 'is-active' : '' }}" href="{{ url('curriculam') }}">Academics</a>
+          <div class="submenu">
+            <a href="{{ url('curriculam') }}">Curriculum</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <a class="{{ request()->is('applications') || request()->is('forms') ? 'is-active' : '' }}" href="{{ url('applications') }}">Admissions</a>
+          <div class="submenu">
+            <a href="{{ url('applications') }}">Applications</a>
+            <a href="{{ url('forms') }}">Application forms</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <a class="{{ request()->is('campus') || request()->is('care') ? 'is-active' : '' }}" href="{{ url('campus') }}">School</a>
+          <div class="submenu">
+            <a href="{{ url('campus') }}">Campus and facilities</a>
+            <a href="{{ url('care') }}">Student care</a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <a href="{{ url('forms') }}">Students</a>
+          <div class="submenu">
+            <a href="{{ url('forms') }}">Form One</a>
+            <a href="{{ url('forms') }}">Form Two</a>
+            <a href="{{ url('forms') }}">Form Three</a>
+            <a href="{{ url('forms') }}">Form Four</a>
+            <a href="{{ url('forms') }}">Form Five</a>
+            <a href="{{ url('forms') }}">Form Six</a>
+          </div>
+        </div>
+        <a class="{{ request()->is('gallery') ? 'is-active' : '' }}" href="{{ url('gallery') }}">Gallery</a>
+        <a class="{{ request()->is('contact') ? 'is-active' : '' }}" href="{{ url('contact') }}">Contact</a>
       </div>
-    </li>
-	 <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Admissions
-      </a>
-      <div class="dropdown-menu bg-dark text-white">
-        <a class="dropdown-item" href="{{ URL::to('applications') }}">Applications</a>
-        <a class="dropdown-item" href="{{ URL::to('forms') }}">Application Forms</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    @yield('content')
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h2>About us</h2>
+        <p>ACACIA Education Centre was established by the Board of Directors of Partners in Development (PID), who are committed, experienced and professional in human resource development, entrepreneurship, financial management and administration.</p>
+        <p class="reg">Reg. No. S. 3588</p>
       </div>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        School
-      </a>
-      <div class="dropdown-menu bg-dark text-white">
-        <a class="dropdown-item" href="{{ URL::to('campus') }}">Campus and Facilities</a>
-        <a class="dropdown-item" href="{{ URL::to('care') }}">Student Care</a>
+      <div>
+        <h2>The school</h2>
+        <a href="{{ url('campus') }}">Campus and facilities</a>
+        <a href="{{ url('care') }}">Student care</a>
+        <a href="{{ url('home') }}">School achievements</a>
       </div>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Students
-      </a>
-      <div class="dropdown-menu bg-dark text-white">
-      <a class="dropdown-item" href="{{ URL::to('form1') }}">Form One</a>
-        <a class="dropdown-item" href="{{ URL::to('formGeneral') }}">Form Two</a>
-        <a class="dropdown-item" href="{{ URL::to('formGeneral') }}">Form Three</a>
-        <a class="dropdown-item" href="{{ URL::to('form4') }}">Form Four</a>
-        <a class="dropdown-item" href="{{ URL::to('form5') }}">Form Five</a>
-        <a class="dropdown-item" href="{{ URL::to('formGeneral') }}">Form Six</a>
-
+      <div>
+        <h2>Information</h2>
+        <a href="{{ url('applications') }}">Applying</a>
+        <a href="{{ url('forms') }}">Application forms</a>
+        <a href="{{ url('home') }}">Current news</a>
       </div>
-    </li>
-	<li class="nav-item">
-      <a class="nav-link" href="{{ URL::to('gallery') }}">Gallery</a>
-    </li>
-	 <li class="nav-item">
-      <a class="nav-link" href="{{ URL::to('contact') }}">Contact Us</a>
-    </li>
-  </ul>
-  </div>
-</nav>
-	
+    </div>
+    <p class="legal">© 2020 Acacia Secondary School</p>
+  </footer>
 
-	
-<div class="content">
-@yield('content')
-</div>
-
-<footer class="container-fluid bg-dark text-white ">
-<div class="container text-center ">
-<div class="row">
-<div class="col-md-4">
-<h4>About us</h4>
-<p>
-ACACIA Education Centre was established by the Board of
- Directors of Partners in Development (PID), who are committed, experienced and professional in human resource development,
- entrepreneurship, financial management and administration.
-</p>
-<h6 >REG. NO. S. 3588</h6>
-</div>
-<div class="col-md-4 divFooter">
-<h4>The School</h4>
-<hr/>
-<p> <a href="{{ URL::to('campus') }}">Campus and Facilities</a></p>
-<hr/>
-<p><a href="{{ URL::to('care') }}">Student Care</a></p>
-<hr/>
-<p><a href="{{ URL::to('home') }}">School Achievements</a></p>
-</div>
-<div class="col-md-4 divFooter">
-<h4>Information</h4>
-<hr/>
-<p><a href="{{ URL::to('applications') }}">Applying</a></p>
-<hr/>
-<p><a href="{{ URL::to('home') }}">Current news</a></p>
-<hr/>
-<p><a href="{{ URL::to('home') }}">Extras</a></p>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12 text-center">
-<i class="far fa-copyright"></i>
-<p>2020
- Acacia Secondary School</p>
-</div>
-</div>
-</footer>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
- <script src='https://kit.fontawesome.com/a076d05399.js'></script>
- <script src = "js/myjs.js"></script>
-
-
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('school-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
 </body>
 </html>
