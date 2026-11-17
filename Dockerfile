@@ -50,4 +50,4 @@ RUN composer dump-autoload --optimize --no-dev --no-scripts \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R ug+rwx storage bootstrap/cache
 
-EXPOSE 80
+EXPOSE 90
